@@ -83,7 +83,7 @@ class WelcomeConfig(object):
         # determine autostart state based on absence of the disable file
         self._autostart = os.path.exists(self._autostart_path)
 
-class ManjaroAppView(WebKit.WebView):
+class NetrunnerAppView(WebKit.WebView):
     def __init__(self):
         WebKit.WebView.__init__(self)
 
@@ -201,13 +201,13 @@ class WelcomeApp(object):
         # build window
         w = Gtk.Window()
         w.set_position(Gtk.WindowPosition.CENTER)
-        w.set_wmclass('Manjaro Welcome', 'Manjaro Welcome')
-        w.set_title('Manjaro Welcome')
+        w.set_wmclass('Netrunner Welcome', 'Netrunner Welcome')
+        w.set_title('Netrunner Welcome')
         w.set_size_request(768, 496)
         w.set_icon_from_file(os.path.join(self._data_path, "img/favicon.png"))
 
         # build webkit container
-        mv = ManjaroAppView()
+        mv = NetrunnerAppView()
 
         # load our index file
         file_in = os.path.abspath(os.path.join(self._data_path, 'index.template'))
